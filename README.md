@@ -1,7 +1,7 @@
 # car_rental
 Website for car rental reservations.
 
-The code is built with: <br>
+<strong>The code is built with:</strong> <br>
 --> Spring Boot (Java) - backend <br>
 --> Angular - frontend <br>
    -> TypeScript <br>
