@@ -1,0 +1,270 @@
+
+.carDetails {
+    color: white;
+    padding-left: 50px;
+    padding-right: 50px;
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+}
+
+.carDetails .title {
+    padding-bottom: 50px;
+}
+.carDetails .title h1{
+    font-weight: bold;
+    -webkit-text-stroke: 1px white;
+}
+.carDetails .title .line{
+    width: 30%;
+    height: 1px;
+    background: rgb(40, 40, 40); 
+}
+
+.carDetails .body-row {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+
+
+/* ======= Swiper Image ========= */
+.carDetails .image-box {
+    width: 550px;
+    height: 350px;
+} 
+.swiper-seller-carDetails {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    border: 1px solid #ff6a00;
+}
+.swiper-seller-carDetails .swiper-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    border-radius: 20px;
+}
+.swiper-seller-carDetails .swiper-slide {
+    width: 100%;
+    display: flex;
+    height: 100%;
+    border-radius: 20px;
+}
+.carDetails .image-box .swiper-seller-carDetails img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 20px;
+}
+
+.thumbs-swiper-seller-carDetails {
+    width: 100%;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    margin-top: 10px;
+}
+.thumbs-swiper-seller-carDetails .swiper-slide {
+    opacity: 0.5; 
+    transition: opacity 0.3s;
+    border: 1px solid transparent;
+    border-radius: 20px;
+}
+.thumbs-swiper-seller-carDetails .swiper-slide img {
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+  
+.thumbs-swiper-seller-carDetails .swiper-slide-thumb-active {
+    opacity: 1; 
+    border: 1px solid #ff6a00;
+    transition: .3s all ease;
+    box-shadow: 0px 0px 5px #ff6a00;
+}
+
+/* === Next Prev Btn === */
+.swiper-button-prev {
+    left: 1px;
+    top: 50%;
+}
+.swiper-button-next {
+    right: 1px;
+    top: 50%;
+}
+.swiper-button-next,
+.swiper-button-prev{
+    width: 40px;
+    height: 40px;
+}
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    font-family: "Font Awesome 5 Free";
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: #FF6A00;
+    transform: none;
+    z-index: 10;
+    padding: 5px;
+    transition: .5s all ease-in-out;
+}
+
+.swiper-button-next::after {
+    content: "\f105";
+}
+.swiper-button-prev::after{
+    content: "\f104";
+}
+.swiper-button-next:hover::after,
+.swiper-button-prev:hover::after{
+    color: black;
+    background: #FF6A00;
+    box-shadow: 0px 0px 5px #FF6A00;
+    transition: .5s all ease-in-out;
+}
+
+/* ======= Pagination - Bullet ======= */
+.swiper-pagination {
+    position: absolute;
+    bottom: 40px !important;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    width: 100% !important;
+    height: auto;
+}
+:host ::ng-deep .swiper-pagination-bullet {
+    background-color: #FF6A00; 
+    width: 10px;
+    height: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+:host ::ng-deep .swiper-pagination-bullet-active {
+    background-color: #FF6A00; 
+    position: relative;
+}
+:host ::ng-deep .swiper-pagination-bullet-active::after {
+    content: "";
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background: transparent;
+    border: 2px solid #FF6A00;
+    top: -4px;
+    left: -4px;   
+    border-radius: 50%;
+}
+
+
+
+/* ============== Content More Info ==================== */
+.carDetails .content-more-info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.carDetails .content-more-info .item{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    align-items: flex-end;
+}
+.carDetails .content-more-info .item .h1 {
+    font-weight: bold;
+    font-size: 18px;
+    color: #ff6a00;
+}
+.carDetails .content-more-info .item .span {
+    font-size: 16px;
+    color: white;
+}
+
+.carDetails .more-options-info .item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.carDetails .more-options-info .item .h1 {
+    font-weight: bold;
+    font-size: 18px;
+    color: #ff6a00;
+}
+.carDetails .more-options-info .item .options-box {
+    height: 350px;
+    border: none;
+    width: 220px;
+    overflow: scroll;
+    border-bottom: 1px solid white;
+    border-top: 1px solid white;
+    padding: 10px;
+    border-radius: 10px;
+}
+.carDetails .id-info .item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.carDetails .id-info .h1{
+    font-weight: bold;
+    font-size: 18px;
+    color: #ff6a00;
+}
+
+
+.carDetails .describe-content {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.carDetails .describe-content .h1 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ff6a00;
+}
+.carDetails .describe-content .box-describe {
+    width: 100%;
+    height: 250px;
+    padding: 20px;
+    border: none;
+    border-bottom: 1px solid white;
+    border-top: 1px solid white;
+    border-radius: 20px;
+}
+.carDetails .describe-content .box-describe .describe-item {
+    width: 100%;
+    height: 100%;
+}
+.carDetails .describe-content .box-describe .describe-item textarea {
+    width: 100%;
+    height: 100%;
+    background: none;
+    border: none;
+    outline: none;
+    resize: none;
+    color: white;
+    font-size: 16px;
+}

@@ -1,0 +1,71 @@
+<div class="loginAdmin">
+    <div class="desing1"></div>
+    <div class="desing5"></div>
+    <div class="desing6"></div>
+    
+    <div class="center">
+        <div class="form_cont">
+            <h1>Admin Login</h1>
+            <div class="line_container">
+                <div class="lXL"></div>
+                <div class="lL"></div>
+                <div class="lL"></div>
+                <div class="lM"></div>
+                <div class="lM"></div>
+                <div class="lM"></div>
+                <div class="lM"></div>
+                <div class="lS"></div>
+                <div class="lS"></div>
+                <div class="lS"></div>
+                <div class="lS"></div>
+                <div class="lS"></div>
+                <div class="lS"></div>
+                <div class="lS"></div>
+                <div class="lS"></div>
+            </div>
+            <form [formGroup]="loginAdminForm" (ngSubmit)="onSubmit()">
+                <div class="row">
+                  <label for="username">Username</label>
+                  <input id="username" formControlName="username" required>
+                </div>
+                
+                <div class="row">
+                  <label for="password">Password</label>
+                  <input id="password" type="password" formControlName="password" required>
+                </div>
+                
+                <div class="btn">
+                    <button type="submit">
+                        <p>Login</p>
+                    </button>
+                </div>
+            </form>
+            <div class="line_container">
+                <div class="lXL"></div>
+                <div class="lL"></div>
+                <div class="lL"></div>
+                <div class="lM"></div>
+                <div class="lM"></div>
+                <div class="lM"></div>
+                <div class="lM"></div>
+                <div class="lS"></div>
+                <div class="lS"></div>
+                <div class="lS"></div>
+                <div class="lS"></div>
+                <div class="lS"></div>
+                <div class="lS"></div>
+                <div class="lS"></div>
+                <div class="lS"></div>
+            </div>
+        </div>
+       
+        
+        <div class="img">
+            <div class="desing2"></div>
+            <div class="desing3"></div>
+            <div class="desing4"></div>
+            <img src="../../../assets/images/admin_image.avif" alt="">
+        </div>
+    </div>
+    
+</div>

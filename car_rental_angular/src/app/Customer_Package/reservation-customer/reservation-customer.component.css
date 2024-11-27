@@ -1,0 +1,73 @@
+.reservationCustomer {
+    width: 100%;
+    height: auto;
+    color: white;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-bottom: 50px;
+}
+.reservationCustomer .title {
+    padding-bottom: 50px;
+}
+.reservationCustomer .title h1{
+    font-weight: bold;
+    -webkit-text-stroke: 1px white;
+}
+.reservationCustomer .title .line{
+    width: 30%;
+    height: 1px;
+    background: rgb(40, 40, 40); 
+}
+
+.reservationCustomer .reservationCustomer-box {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.reservationCustomer .reservationCustomer-box .item {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    padding: 30px;
+    border-radius: 20px;
+}
+.item .row {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.item .row .col {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+
+.accepted-bg {
+    border: 1px solid green; 
+}
+  
+.rejected-bg {
+    border: 1px solid red; 
+}
+  
+.pending-bg {
+    border: 1px solid #ff6a00; 
+}
+
+
+.absolute {
+    position: absolute;
+    padding: 30px;
+    background: white;
+    color: black;
+    border-radius: 20px;
+    left: 50%;
+    top: 50%;
+}
+.absolute .modal {
+    display: flex;
+    flex-direction: column;
+}
+  

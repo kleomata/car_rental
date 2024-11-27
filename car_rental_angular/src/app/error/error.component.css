@@ -1,0 +1,72 @@
+.error {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 20px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    cursor: default;
+}
+.error img {
+    width: 60%;
+    height: auto;
+    z-index: 1;
+}
+.error p {
+    text-align: center;
+    z-index: 1;
+}
+.error a {
+    text-decoration: none;
+    color: #ff6a00;
+}
+.error .line1 {
+    position: absolute;
+    top: 0px;
+    right: 0;
+    width: 120%;
+    height: 100px;
+    background: rgba(255, 106, 0, .5);
+    z-index: 0;
+    transform: rotate(-25deg);
+    transform-origin: right top;
+    box-shadow: 0px 0px 10px rgba(255, 106, 0, .5);
+
+}
+.error .line2 {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 120%;
+    height: 100px;
+    background: rgba(255, 106, 0, .5);
+    z-index: 0;
+    transform: rotate(25deg);
+    transform-origin: left top;
+    box-shadow: 0px 0px 10px rgba(255, 106, 0, .5);
+}
+
+.error .circle1 {
+    position: absolute;
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    left: -150px;
+    top: calc(50% - 150px);
+    background: rgba(255, 106, 0, .5);
+    box-shadow: 0px 0px 10px rgba(255, 106, 0, .5);
+}
+.error .circle2 {
+    position: absolute;
+    border-radius: 50%;
+    width: 300px;
+    height: 300px;
+    right: -150px;
+    top: calc(50% - 150px);
+    background: rgba(255, 106, 0, .5);
+    box-shadow: 0px 0px 10px rgba(255, 106, 0, .5);
+}

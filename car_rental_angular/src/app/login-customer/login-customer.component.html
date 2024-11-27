@@ -1,0 +1,21 @@
+<div class="login-box">
+  <div class="login">
+    <form [formGroup]="loginCustomerForm" (ngSubmit)="loginCustomer()">
+      <div class="row">
+        <label for="username">Username</label>
+        <input id="username" formControlName="username" required>
+      </div>
+      
+      <div class="row">
+        <label for="passwordCustomer">Password</label>
+        <input id="passwordCustomer" type="password" formControlName="passwordCustomer" required>
+      </div>
+      
+      <div class="button-container">
+          <button type="submit">
+              <p>Login</p>
+          </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,128 @@
+.edit {
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+}
+
+.edit .item,
+.edit .titleItem     {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr 1fr 1fr 1fr;
+    border-bottom: 1px solid white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+    padding-left: 10px;
+    padding-right: 15px;
+    border-radius: 15px;
+    align-items: center;
+}
+.edit .titleItem {
+    font-weight: bold;
+    -webkit-text-stroke: 1px white;
+}
+.edit .item button {
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    background: white;
+    color: #ff6a00;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
+    transition: .5s all ease;
+}
+.edit .item button:hover {
+    background: #ff6a00;
+    color: white;
+}
+
+.edit .editSection {
+    background: rgb(51, 51, 51, .5);
+    position: absolute;
+    top: 0px;
+    left: 240px;
+    height: 100%;
+    width: calc(100% - 240px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.edit .editSection form {
+    width: 400px;
+    height: 500px;
+    background: #fa812b;
+    border-radius: 20px;
+    position: relative;
+    padding: 30px;
+}
+.edit .editSection form i {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border: 2px solid white;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: .5s all ease;
+}
+.edit .editSection form i:hover{
+    border: 2px solid black;
+    color: black;
+}
+
+.edit .editSection form .row {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-top: 10px;
+}
+.edit .editSection form .row label {
+    color: black;
+    font-weight: bold;
+}
+.edit .editSection form .row input {
+    background: transparent;
+    color: black;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid black;
+    border-radius: 10px;
+    padding-left: 10px;
+    width: 200px;
+    height: 30px;    
+}
+
+.edit .editSection form .btnDiv {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+.edit .editSection form button {
+    background: white;
+    color: #ff6a00;
+    transition: .5s all ease;
+    outline: none;
+    border: none;
+    padding: 10px 30px;
+    border-radius: 10px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+}
+.edit .editSection form button:hover{
+    transition: .5s all ease;
+    background: black;
+}

@@ -1,0 +1,35 @@
+<div class="delete">
+    <div class="titleItem">
+        <p>Id Seller</p>
+        <p>Username</p>
+        <p>Name</p>
+        <p>Last Name</p>
+        <p>Email</p>
+        <p>Tel. Number</p>
+        <p>Location</p>
+        <p>Edit Button</p>
+    </div>
+    <div class="item" *ngFor="let seller of sellers">
+        <p>{{seller.id}}</p>
+        <p>{{seller.username}}</p>
+        <p>{{seller.nameSeller}}</p>
+        <p>{{seller.lastnameSeller}}</p>
+        <p>{{seller.emailSeller}}</p>
+        <p>{{seller.telSeller}}</p>
+        <p>{{seller.locationSeller}}</p>
+    
+    
+       <button (click)="openCOnfirmDialog(seller.id)">Delete Seller</button>
+    
+    </div>
+    <div *ngIf="showConfirmDialog" class="confirm-dialog">
+        <h2>Confirm Delete</h2>
+        <div class="line"></div>
+        <p>{{confirmationMessage}}</p>
+        <p class="idMess">{{idMessage}}</p>
+        <div class="btn">
+            <button (click)="handleDialogResponse(false)">Cancel</button>
+            <button (click)="handleDialogResponse(true)">Delete</button>
+        </div>
+      </div>
+</div>

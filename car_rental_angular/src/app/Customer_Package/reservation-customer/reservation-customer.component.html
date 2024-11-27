@@ -1,0 +1,80 @@
+<div class="reservationCustomer">
+    <div class="title">
+        <h1>Reservation for Car</h1>
+        <div class="line"></div>
+    </div>  
+    <div *ngIf="reservationCustomer.length > 0" class="reservationCustomer-box">
+        <div *ngFor="let reservation of reservationCustomer, let i = index" class="item"
+        [ngClass]="{
+            'accepted-bg': reservation.status === 'ACCEPTED',
+            'rejected-bg': reservation.status === 'REJECTED',
+            'pending-bg': reservation.status === 'PENDING'
+          }">
+            <div class="row">
+                <p>{{i+1}}</p>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p>Rezervation with id: </p>
+                    <p>{{reservation.id}}</p>
+                </div>
+                <div class="col">
+                    <p>Reservation with id: </p>
+                    <p>{{reservation.carId}}</p>
+                </div>
+                <div class="col">
+                    <p>Name car: </p>
+                    <p>{{reservation.namecar}}</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col">
+                    <p>Prcie car: </p>
+                    <p>{{reservation.price}}</p>
+                </div>
+                <div class="col">
+                    <p>Total Price: </p>
+                    <p>{{reservation.totalprice}}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p>Start Data: </p>        
+                    <p>{{reservation.startDate}}</p>
+                </div>
+                <div class="col">
+                    <p>End Data: </p>
+                    <p>{{reservation.endDate}}</p>
+                </div>
+                <div class="col">
+                    <p>Total data: </p>
+                    <p>{{calculateDaysDifference(reservation.startDate, reservation.endDate)}}</p>
+
+                </div>
+            </div>
+            <div class="row">
+                <p>{{reservation.text}}</p>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <p>Status: </p>
+                    <p>{{reservation.status}}</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <p>Message: </p>
+                    <p>{{reservation.message}}</p>
+                </div>
+            </div>
+            
+        </div>
+       
+    </div>
+    <div *ngIf="reservationCustomer.length <= 0">
+        <p>There is no reservation for any of the cars.</p>
+    </div>
+</div>

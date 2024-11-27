@@ -1,0 +1,33 @@
+<div class="seller-profile">
+    <div class="nav">
+        <div class="logo">
+            <img src="../../../assets/images/Logo_UrbanElite_Car_Rental.png" alt="">
+        </div>
+
+        <div class="menu">
+            <div class="menu">
+                <div class="item" *ngFor="let item of menu">
+                    <a [routerLink]="item.routerLink" routerLinkActive="active">
+                        <p>{{item.title}}</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="button">
+            <button (click)="onLogoutSeller()">
+                <p>Logout</p>
+            </button>
+        </div>
+        
+
+    </div>
+    
+
+    <div class="line"></div>
+
+    <div class="body">
+        <router-outlet></router-outlet>
+    </div>
+
+</div>

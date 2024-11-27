@@ -1,0 +1,568 @@
+.fleet {
+    width: 100vw;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+}
+.fleet .fleet_header {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 65vh;
+    position: relative;
+}
+
+/*==== Head Conetiner =====*/
+.fleet .fleet_header .title_container .content1 {
+    position: absolute;
+    top: 0;
+    left: -120px;
+    background: black;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    transform: skewX(-20deg);
+}
+.fleet .fleet_header .title_container .content2 {
+    position: absolute;
+    top: 162.75px;
+    background: rgba(255, 106, 0, .5);
+    left: -60px;
+    width: 110%;
+    height: 300px;
+    transform: skewX(20deg);
+    z-index: -1;
+}
+.fleet .fleet_header .title_container {
+    width: 50%;
+    height: 100%;
+    position: relative;
+}
+
+.fleet .fleet_header .title_container .title {
+    z-index: 10;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    padding-left: 100px;
+    flex-direction: column;
+    justify-content: center;
+}
+.fleet .fleet_header .title_container .title h1 {
+    color: transparent;
+    font-weight: bold;
+    font-size: 70px;
+    -webkit-text-stroke: 1px white;
+    text-shadow: 1px 1px 0px rgba(255, 255, 255, 0.2);
+}
+.line_container {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+}
+.lXL, .lL, .lM, .lS {
+    height: 10px;
+    transform: skewX(45deg);
+    background-color: transparent; 
+    border: 1px solid rgba(255, 255, 255, 1); 
+    box-shadow: inset 0px 0px 10px rgba(255, 255, 255, 0.5);
+}
+.lXL{
+    width: 40px;
+}
+.lL{
+    width: 30px;
+}
+.lM{
+    width: 20px;
+}
+.lS{
+    width: 10px;
+}
+.fleet .fleet_header .img_container {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: end;
+    z-index: -2;
+}
+.fleet .fleet_header img{
+    width: 70%;
+    height: 65vh;
+    object-fit: cover;
+    object-position: center;
+}
+
+
+/* =========== Fleet Body  ======== */
+.fleet .fleet-body {
+    width: 100%;
+    padding: 100px;
+    display: flex;
+    flex-direction: row;
+}
+
+
+/* ======== FLeet Side Filter ========= */
+.fleet .fleet-body .side-filter {
+    width: 350px;
+    height: 100vh;
+    margin-left: 50px;
+}
+
+.fleet .fleet-body .side-filter .filter-price-box{
+    width: 100%;
+    height: auto;
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    cursor: default;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-right: 30px;
+}
+.filter-price-box .title {
+    font-weight: bold;
+    font-size: 16px;
+}
+.filter-price-box .range-labels {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.filter-price-box .range-labels .price {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border-radius: 10px;
+    padding: 5px 10px;
+    width: 120px;
+    border: 1px solid #ccc;
+}
+.noUi-horizontal {
+    height: 4px;
+}
+:host ::ng-deep .noUi-connect {
+    background: #ff6a00;
+}
+:host ::ng-deep .noUi-target {
+    border: none;
+    background: rgba(255, 106, 0, 0.2);
+    box-shadow: none;
+}
+:host ::ng-deep .noUi-handle {
+    border: 1px solid #ff6a00;
+    border-radius: 50%;
+    width: 20px !important; 
+    height: 20px !important;
+    top: -8px !important;
+    right: -10px;
+}
+:host ::ng-deep .noUi-handle::before {
+    display: none;
+}
+:host ::ng-deep .noUi-handle::after {
+    display:  none;
+}
+
+
+
+.filter-type-box .title {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.filter-type-box {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+}
+.filter-type-box label,
+.sort-box label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.filter-type-box input[type="radio"],
+.sort-box input[type="radio"]{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: transparent;
+    border: 2px solid #ccc;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: relative;
+}
+.filter-type-box input[type="radio"]::before,
+.sort-box input[type="radio"]::before {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: 3px;
+    left: 3px;
+    border-radius: 50%;
+    background: #ff6a00;
+    transform: scale(0);
+}
+.filter-type-box input[type="radio"]:checked::before,
+.sort-box input[type="radio"]:checked::before {
+    transform: scale(1);
+}
+.filter-type-box input[type="radio"]:checked,
+.sort-box input[type="radio"]:checked {
+    border: 2px solid #ff6a00;
+}
+
+
+
+
+
+
+.filter-price-box .range-labels .price span {
+    color: #ccc;
+}
+.filter-price-box .range-labels .price p {
+    color: black;
+}
+
+
+
+
+
+
+.fleet .fleet-body .main-car {
+    display: flex;
+    flex-direction: column;
+    width: calc(100% - 350px);
+    margin-right: 50px;
+} 
+
+.fleet .fleet-body .main-car .row-filter {
+    width: 100%;
+    height: 150px;
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+.fleet .fleet-body .main-car .row-filter .car-number {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.fleet .fleet-body .main-car .row-filter .car-number .num-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    border: 1px solid #ff6a00;
+    width: 100px;
+    border-radius: 10px;
+    padding: 5px 10px;
+    color: #ff6a00;
+}
+
+.fleet .fleet-body .main-car .row-filter .car-number .title {
+    font-size: 16px;
+    font-weight: bold;
+}
+.fleet .fleet-body .main-car .row-filter .car-number .number { 
+    font-size: 20px;
+    font-weight: bold;
+}
+.fleet .fleet-body .main-car .row-filter .car-number i{ 
+    font-size: 20px;
+}
+
+
+.fleet .fleet-body .main-car .row-filter .filter-by-brand {
+    display: flex;
+    flex-direction: row;
+    height: 50px;
+    align-items: center;
+}
+.filter-by-brand .search-lab {
+    height: 100%;
+    background: #ccc;
+    width: auto;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px 0px 0px 10px;
+}
+.filter-by-brand .search-inp {
+    height: 100%;
+    width: 250px;
+    border: none;
+    border-radius: 0px 10px 10px 0px;
+}
+.filter-by-brand .search-inp input {
+    width: 100%;
+    height: 100%;
+    border-radius: 0px 10px 10px 0px;
+    padding: 10px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #ccc;
+}
+
+
+
+
+.fleet .fleet-body .main-car .row-filter .sort-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+}
+.sort-box .sort-head {
+    display: flex;
+    flex-direction: column;
+}
+.sort-box .clearSort-div {
+    width: 100px;
+}
+.sort-box .clearSort-div button {
+    border: none;
+    outline: none;
+    color: #ff6a00;
+    cursor: pointer;
+    background: transparent;
+    font-size: 16px;
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.sort-box .line-sort {
+    height: 100%;
+    width: 1px;
+    background: black;
+}
+.fleet .fleet-body .main-car .row-filter .sort-box .title {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.fleet .fleet-body .main-car .row-filter .sort-box .sort-func {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.fleet .fleet-body .main-car .row-filter .sort-box .sort-func .col {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.fleet .fleet-body .main-car .row-filter .sort-box .sort-func .col p{ 
+    border-bottom: 1px solid black;
+}
+
+
+/*//////////////////////////////////////*/
+.fleet .fleet-body .main-car .row-car {
+    width: 100%;
+    height: auto;
+}
+.fleet .fleet-body .main-car .row-car .all-car-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;  
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.row-car .all-car-container .item{
+    border: 1px solid black;
+    height: 430px;
+    border-radius: 20px;
+    padding: 3px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: 15px;
+}
+
+.row-car .all-car-container .item .content-img {
+    overflow: hidden;
+    border-radius: 20px;
+    width: 100%;
+    height: 230px;
+}
+.row-car .all-car-container .item img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+}
+.row-car .all-car-container .item img:hover {
+    transform: scale(1.1); 
+}
+.row-car .all-car-container .name {
+    font-size: 20px;
+    font-weight: bold;
+    color: black;
+    padding-left: 5px;
+}
+
+.row-car .middle-content {
+    width: 100;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+.row-car .all-car-container .item .content-specification {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 5px;
+}
+.content-specification .specific {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.content-specification .specific .icon-box {
+    width: 30px;
+    height: 30px;
+    position: relative;
+}
+.content-specification .specific .icon-box .hover {
+    position: absolute;
+    top: -100%;
+    left: 100%;
+    background: #ff6a00;
+    padding: 5px;
+    border-radius: 5px;
+    display: none;
+}
+.content-specification .specific .icon-box:hover .hover {
+    display: block;
+}
+
+
+.content-specification .specific .icon-box i {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #ff6a00;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ff6a00;
+    border-radius: 5px;
+}
+.content-specification .specific .p-box{
+    width: 30px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.content-specification .specific p{
+    font-size: 12px;
+}
+.middle-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+.middle-content .middle-line {
+    height: 100%;
+    width: 1px;
+    background: black;
+}
+
+.middle-content .price-box {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    align-items: flex-end;
+}
+.middle-content .price-box .price {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.line-box {
+    height: 1px;
+    width: 90%;
+    background: black;
+    margin-left: 5%;
+}
+.content-btn {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-left: 10px;
+    padding-right: 10px;
+    gap: 10px;
+}
+.content-btn .btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    border: 1px solid black;
+    border-radius: 20px;
+    padding: 5px;
+    justify-content: center;
+    cursor: pointer;
+    height: 35px;
+}
+.content-btn .btn p {
+    font-size: 14px;
+}
+.content-btn .whats-app-cont:hover{
+    background: rgb(37, 211, 102);
+    border: 1px solid rgb(37, 211, 102);
+    color: rgb(17, 43, 13);
+    transition: .5s all ease;
+    box-shadow: 0px 0px 10px #ccc;
+}
+.content-btn .whats-app-cont{
+    transition: .5s all ease;
+    background: white;
+    border: 1px solid rgb(37, 211, 102);
+    color: rgb(37, 211, 102);
+}
+.content-btn .instagram-cont:hover{
+    background: rgb(245, 133, 41);
+    border: 1px solid rgb(245, 133, 41);
+    color: rgb(17, 43, 13);
+    transition: .5s all ease;
+    box-shadow: 0px 0px 10px #ccc;
+}
+.content-btn .instagram-cont{
+    background: white;
+    border: 1px solid rgb(245, 133, 41);
+    color: rgb(245, 133, 41);
+    transition: .5s all ease;
+}
+.content-btn .book-now-cont:hover{
+    background: rgb(255, 106, 0);
+    border: 1px solid rgb(255, 106, 0);
+    color: rgb(17, 43, 13);
+    transition: .5s all ease;
+    box-shadow: 0px 0px 10px #ccc;
+}
+.content-btn .book-now-cont{
+    background: white;
+    border: 1px solid rgb(255, 106, 0);
+    color: rgb(255, 106, 0);
+    transition: .5s all ease;
+}
+
+
+

@@ -1,0 +1,112 @@
+<div class="carDetails" *ngIf="carDetails">
+    <div class="title">
+        <h1>{{"Details for "+carDetails.name}}</h1>
+        <div class="line"></div>
+    </div>
+      
+    <div class="body-row">
+      <div *ngIf="carDetails" class="image-box">
+        <div class="swiper-container swiper-seller-carDetails">
+          <div class="swiper-wrapper">
+            <ng-container *ngFor="let image of carDetails.imagescar">
+              <div class="swiper-slide">
+                <img [src]="'http://localhost:8080' +image" alt="{{ carDetails.name }}" />
+              </div>
+            </ng-container>
+          </div>
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>  
+        </div>
+        <div class="swiper-container thumbs-swiper-seller-carDetails">
+          <div class="swiper-wrapper">
+            <ng-container *ngFor="let image of carDetails.imagescar">
+              <div class="swiper-slide">
+                <img [src]="'http://localhost:8080' +image" alt="{{ carDetails.name }}" />
+              </div>
+            </ng-container>
+          </div>
+        </div>
+      </div>
+
+      <div class="content-more-info">
+        <div class="item">
+          <p class="h1">Name Car:</p>
+          <p class="span">{{carDetails.name}}</p>
+        </div>
+        <div class="item">
+          <p class="h1">Brand:</p>
+          <p class="span">{{carDetails.brand}}</p>
+        </div>
+        <div class="item">
+          <p class="h1">Type:</p>
+          <p class="span">{{carDetails.type}}</p>
+        </div>
+        <div class="item">
+          <p class="h1">Year of Manufacture:</p>
+          <p class="span">{{carDetails.yearofmanufacture}}</p>
+        </div>
+        <div class="item">
+          <p class="h1">Daily Price:</p>
+          <p class="span">{{carDetails.priceperday+" $"}}</p>
+        </div>
+        <div class="item">
+          <p class="h1">Transmission:</p>
+          <p class="span">{{carDetails.transmission}}</p>
+        </div>
+        <div class="item">
+          <p class="h1">Mileage (km):</p>
+          <p class="span">{{carDetails.mileagekm}}</p>
+        </div>
+        <div class="item">
+          <p class="h1">Engine:</p>
+          <p class="span">{{carDetails.engine}}</p>
+        </div>
+        <div class="item">
+          <p class="h1">Color:</p>
+          <p class="span">{{carDetails.color}}</p>
+        </div>
+        <div class="item">
+          <p class="h1">Seats:</p>
+          <p class="span">{{carDetails.seats}}</p>
+        </div>
+        <div class="item">
+          <p class="h1">Doors:</p>
+          <p class="span">{{carDetails.doors}}</p>
+        </div>
+        <div class="item">
+          <p class="h1">Baggages:</p>
+          <p class="span">{{carDetails.baggages}}</p>
+        </div>
+      </div>  
+
+      <div class="more-options-info">
+        <div class="item">
+          <p class="h1">More Options</p>
+          <div class="options-box">
+            <p class="span" *ngFor="let options of carDetails.moreoptions; let i = index">
+              {{i+1+": "}}{{options}}
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="id-info">
+        <div class="item">
+          <p class="h1">Car Id</p>
+            <p class="span">{{carDetails.id}}</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="describe-content">
+      <p class="h1">Describe for Car</p>
+      <div class="box-describe">
+        <div class="describe-item">
+          <textarea readonly>{{carDetails.describecar}}</textarea>
+        </div>
+      </div>
+    </div>
+    
+</div>

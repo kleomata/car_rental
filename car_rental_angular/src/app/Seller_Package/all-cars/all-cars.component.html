@@ -1,0 +1,21 @@
+<div class="all-cars">
+    <div class="title">
+        <h1>All Car Section</h1>
+        <div class="line"></div>
+    </div>    
+    <div *ngIf="carsGet.length > 0" class="cars-container">
+        <div *ngFor="let car of carsGet" class="cars-item">
+            <div class="row-img">
+                <img *ngIf="car.imagescar && car.imagescar.length>0" [src]="'http://localhost:8080' + car.imagescar[0]" alt="Car Image" multiple/>
+            </div>
+            <div class="row-info">
+                <p>{{car.brand + " "+car.name+" "+car.yearofmanufacture}}</p>
+                <p><strong>{{car.priceperday+" $"}}</strong> / day</p>
+            </div>
+            <div class="btn-content">
+                <button (click)="viewCarDetails(car.id)">See more info</button>
+            </div>
+              
+        </div>
+    </div>
+</div>

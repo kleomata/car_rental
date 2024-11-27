@@ -1,0 +1,101 @@
+<div class="reservationSeller">
+    <div class="title">
+        <h1>Reservation for Car</h1>
+        <div class="line"></div>
+    </div>  
+    <div *ngIf="reservations.length > 0" class="reservationSeller-box">
+        <div *ngFor="let reservation of reservations, let i = index" class="item"
+        [ngClass]="{
+            'accepted-bg': reservation.status === 'ACCEPTED',
+            'rejected-bg': reservation.status === 'REJECTED',
+            'pending-bg': reservation.status === 'PENDING'
+          }">
+            <div class="row">
+                <p>{{i+1}}</p>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p>Rezervation with id: </p>
+                    <p>{{reservation.id}}</p>
+                </div>
+                <div class="col">
+                    <p>Reservation with id: </p>
+                    <p>{{reservation.carId}}</p>
+                </div>
+                <div class="col">
+                    <p>Name car: </p>
+                    <p>{{reservation.namecar}}</p>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col">
+                    <p>Prcie car: </p>
+                    <p>{{reservation.price}}</p>
+                </div>
+                <div class="col">
+                    <p>Total Price: </p>
+                    <p>{{reservation.totalprice}}</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <p>Start Data: </p>        
+                    <p>{{reservation.startDate}}</p>
+                </div>
+                <div class="col">
+                    <p>End Data: </p>
+                    <p>{{reservation.endDate}}</p>
+                </div>
+                <div class="col">
+                    <p>Total data: </p>
+                    <p>{{calculateDaysDifference(reservation.startDate, reservation.endDate)}}</p>
+
+                </div>
+            </div>
+            <div class="row">
+                <p>{{reservation.text}}</p>
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    <p>Status: </p>
+                    <p>{{reservation.status}}</p>
+                </div>
+            </div>
+
+            <div class="row" *ngIf="reservation.status === 'PENDING'">
+                <div class="col">
+                    <button (click)="openAcceptModal(reservation.id)">Accept</button>
+                </div>
+                <div class="col">
+                    <button (click)="openRejectModal(reservation.id)">Reject</button>                
+                </div>
+            </div>
+
+            
+        </div>
+        <div class="row absolute" *ngIf="currentReservationId">
+            <div *ngIf="isAcceptModalOpen" class="modal">
+                <h2>Accept Reservation</h2>
+                {{currentReservationId  }}
+                <label for="acceptMessage">Accept Message:</label>
+                <input *ngIf="currentReservationId" id="acceptMessage" [(ngModel)]="acceptMessage[currentReservationId]" placeholder="Write your message here" />
+                <button (click)="onAccept()">Accept</button>
+                <button (click)="closeModal()">Cancel</button>
+            </div>
+              
+            <div *ngIf="isRejectModalOpen" class="modal">
+                <h2>Reject Reservation</h2>
+                <label for="rejectMessage">Reject Message:</label>
+                <input *ngIf="currentReservationId" id="rejectMessage" [(ngModel)]="rejectMessage[currentReservationId]" placeholder="Write your message here" />
+                <button (click)="onReject()">Reject</button>
+                <button (click)="closeModal()">Cancel</button>
+            </div>
+              
+        </div>
+    </div>
+    <div *ngIf="reservations.length <= 0">
+        <p>There is no reservation for any of the cars.</p>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+<div class="navbar-header">
+    <div class="left">
+        <div class="contact">
+            <p>Tel: +35568000000</p>
+        </div>
+        <div class="line-middle"></div>
+        <div class="contact">
+            <p>Email: urbanelite&#6;4gmail.com</p>
+        </div>
+    </div>
+    <div class="right">
+        <div class="social_media" *ngFor="let item of socialMedia; let last = last">
+            <a [href]="item.linkSocialMedia" target="_blank">
+                <i class="{{item.icon}}"></i>
+            </a>
+            <div *ngIf="!last" class="line-middle"></div>
+        </div>
+    </div>
+</div>
+
+<div [ngClass]="{'scrolledBackground': isScrolledBackground,
+                    'scrolledPosition': isScrolledPosition}" class="navbar">
+    <div class="logo_container">
+        <img src="../../assets/images/Logo_UrbanElite_Car_Rental.png" alt="logo">
+    </div>
+    
+    <div class="menu_container">
+        <div class="list" *ngFor="let item of navbar">
+            <a [routerLink]="item.routerLink" class="item" routerLinkActive="activeColor">
+                <p>{{item.nameItem}}</p>
+            </a>
+        </div>
+    </div>
+
+    <div class="login_container" *ngIf="!isLoggedIn">
+        <button (click)="showRegister()">Sing Up</button>
+        <button (click)="showLogin()">Login</button>
+    </div>
+    <div class="user_container" *ngIf="isLoggedIn">
+        <a routerLink="customer">
+            <div *ngIf="customerProfile">
+                <p>{{customerProfile.nameCustomer+" "+ customerProfile.lastnameCustomer}}</p>
+            </div>
+            <img *ngIf="customerImageUrl" [src]="customerImageUrl" alt="Customer Image" />
+        </a>
+        <!--<button>Logout</button>-->
+      </div>
+
+</div>
+<app-register-customer *ngIf="registerShow"></app-register-customer>
+<app-login-customer *ngIf="loginShow"></app-login-customer>

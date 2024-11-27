@@ -1,0 +1,58 @@
+<div class="swiper-container swiper-brand">
+    <div class="swiper-wrapper">
+        <ng-container *ngFor="let page of pagedBrands">
+            <div class="swiper-slide">
+                <div class="brand-row">
+                    <ng-container *ngFor="let brand of page; let i = index">
+                        <div class="brand-item" *ngIf="i < 3"> 
+                            <a class="href_image" [href]="brand.link">
+                                <img [src]="'../../assets/images/' + brand.logo" alt="">
+                            </a>
+                            <div class="col_brand_item">                           
+                                <h1>{{brand.nameBrand}}</h1>
+                                <div class="line_container">
+                                    <div class="lL"></div>
+                                    <div class="lM"></div>
+                                    <div class="lM"></div>
+                                    <div class="lS"></div>
+                                    <div class="lS"></div>
+                                    <div class="lS"></div>
+                                    <div class="lS"></div>
+                                    <div class="lS"></div>
+                                </div>
+                                <a class="href_text" [href]="brand.link">See More about {{brand.nameBrand}}</a>
+                            </div>
+                        </div>
+                    </ng-container>
+                </div>
+                <div class="brand-row">
+                    <ng-container *ngFor="let brand of page; let i = index">
+                        <div class="brand-item" *ngIf="i >= 3"> 
+                            <a class="href_image" [href]="brand.link">
+                                <img [src]="'../../assets/images/' + brand.logo" alt="">
+                            </a>
+                            <div class="col_brand_item">                           
+                                <h1>{{brand.nameBrand}}</h1>
+                                <div class="line_container">
+                                    <div class="lL"></div>
+                                    <div class="lM"></div>
+                                    <div class="lM"></div>
+                                    <div class="lS"></div>
+                                    <div class="lS"></div>
+                                    <div class="lS"></div>
+                                    <div class="lS"></div>
+                                    <div class="lS"></div>
+                                </div>
+                                <a class="href_text" [href]="brand.link">See More about {{brand.nameBrand}}</a>
+
+                            </div>
+                        </div>
+                    </ng-container>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+    <div class="content-button"></div>  
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+</div>

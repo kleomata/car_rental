@@ -1,0 +1,30 @@
+<div class="createSeller">
+    <div class="title">
+        <h1>Create Seller</h1>
+        <div class="line"></div>
+      </div>
+    <form (ngSubmit)="onSubmit()">
+        <label for="nameSeller">Name:</label>
+        <input type="text" id="nameSeller" [(ngModel)]="seller.nameSeller" name="nameSeller" required>
+    
+        <label for="lastnameSeller">Last Name:</label>
+        <input type="text" id="lastnameSeller" [(ngModel)]="seller.lastnameSeller" name="lastnameSeller" required>
+    
+        <label for="emailSeller">Email:</label>
+        <input type="email" id="emailSeller" [(ngModel)]="seller.emailSeller" name="emailSeller" required>
+    
+        <label for="telSeller">Phone:</label>
+        <input type="text" id="telSeller" [(ngModel)]="seller.telSeller" name="telSeller" required>
+    
+        <label for="locationSeller">Location:</label>
+        <input type="text" id="locationSeller" [(ngModel)]="seller.locationSeller" name="locationSeller" required>
+    
+        <label for="usernameSeller">Username:</label>
+        <input type="text" id="usernameSeller" [(ngModel)]="seller.username" name="usernameSeller" required>
+    
+        <label for="passwordSeller">Password:</label>
+        <input type="password" id="passwordSeller" [(ngModel)]="seller.passwordSeller" name="passwordSeller" required>
+    
+        <button type="submit">Create Seller</button>
+    </form>
+</div>

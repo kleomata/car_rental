@@ -1,0 +1,57 @@
+.createSeller {
+    color: white;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.createSeller .title {
+    padding-bottom: 50px;
+}
+.createSeller .title h1{
+    font-weight: bold;
+    -webkit-text-stroke: 1px white;
+}
+.createSeller .title .line{
+    width: 30%;
+    height: 1px;
+    background: rgb(40, 40, 40); 
+}
+
+.createSeller form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.createSeller form label{
+    font-weight: bold;
+}
+.createSeller form input {
+    margin-bottom: 30px;
+    background: transparent;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid white;
+    padding: 10px;
+    color: white;
+    border-radius: 10px;
+    width: 250px;
+}
+.createSeller form button {
+    border: 1px solid #ff6a00;
+    color: #ff6a00;
+    background: transparent;
+    outline: none;
+    padding: 15px 30px;
+    font-weight: bold;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: .5s all ease;
+    margin-left: 30px;
+    margin-top: 20px;
+}
+.createSeller form button:hover {
+    background: #ff6a00;
+    color: black;
+    transition: .5s all ease;
+}

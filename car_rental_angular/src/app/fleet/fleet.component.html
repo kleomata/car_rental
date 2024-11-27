@@ -1,0 +1,226 @@
+<div class="fleet">
+    <div class="fleet_header">
+        <div class="title_container">
+            <div class="content1"></div>
+            <div class="content2"></div>
+            <div class="title">
+                <h1>Our Fleet</h1>
+                 <div class="line_container">
+                    <div class="lXL"></div>
+                    <div class="lL"></div>
+                    <div class="lL"></div>
+                    <div class="lM"></div>
+                    <div class="lM"></div>
+                    <div class="lM"></div>
+                    <div class="lM"></div>
+                    <div class="lS"></div>
+                    <div class="lS"></div>
+                    <div class="lS"></div>
+                    <div class="lS"></div>
+                    <div class="lS"></div>
+                    <div class="lS"></div>
+                    <div class="lS"></div>
+                    <div class="lS"></div>
+                    <div class="lS"></div>
+                    <div class="lS"></div>
+                    <div class="lS"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="img_container">
+            <img src="../../assets/images/fleet_image.jpg" alt="">
+        </div>
+    </div>
+
+    <div class="fleet-body">
+
+        <div class="side-filter">
+            <div class="filter-price-box">
+                <p class="title">Filter Price</p>
+              
+                <div id="priceRangeFleet"></div>
+                <div class="range-labels">
+                  <div class="price">
+                    <span>Min Price</span>
+                    <p>{{minPrice+" $"}}</p>
+                  </div>
+                  <div class="price">
+                    <span>Max Price</span>
+                    <p>{{maxPrice+" $"}}</p>
+                  </div>
+                </div>
+            </div>
+              
+              <!--<div *ngIf="filteredCars.length > 0">
+                <h3>Available Cars:</h3>
+                <div *ngFor="let car of filteredCars">
+                  <p>{{ car.name }} - ${{ car.priceperday }} per day</p>
+                </div>
+              </div>
+            -->
+              
+              <br>
+              <div class="filter-type-box">
+                <p class="title">Filter by Car Type</p>
+                <label>
+                  <input class="radio-type" type="radio" name="carType" value="" (change)="filterByCarType('')" [checked]="selectedCarType === ''"> All
+                </label>
+                <label>
+                  <input type="radio" name="carType" value="SUV" (change)="filterByCarType('SUV')" [checked]="selectedCarType === 'SUV'"> SUV's Cars
+                </label>
+                <label>
+                  <input type="radio" name="carType" value="Sport" (change)="filterByCarType('Sport')" [checked]="selectedCarType === 'Sport'"> Sport Cars
+                </label>
+                <label>
+                  <input type="radio" name="carType" value="Luxury" (change)="filterByCarType('Luxury')" [checked]="selectedCarType === 'Luxury'"> Luxury Cars
+                </label>
+                <label>
+                  <input type="radio" name="carType" value="Convertibles" (change)="filterByCarType('Convertibles')" [checked]="selectedCarType === 'Convertibles'"> Convertibles Cars
+                </label>
+                <label>
+                  <input type="radio" name="carType" value="Electric" (change)="filterByCarType('Electric')" [checked]="selectedCarType === 'Electric'"> Electric Cars
+                </label>
+                <label>
+                  <input type="radio" name="carType" value="Other" (change)="filterByCarType('Other')" [checked]="selectedCarType === 'Other'"> Other Cars
+                </label>
+              </div>
+              
+
+              
+        </div>
+
+        <div class="main-car">
+            <div class="row-filter">
+                <div class="car-number">
+                    <p class="title">Number of cars:</p>
+                    <div class="num-box">
+                        <p class="number">{{filterCarCounter}}</p>
+                        <i class="fa-solid fa-car"></i>
+                    </div>
+                </div>
+                <div class="filter-by-brand">
+                    <div class="search-lab">
+                        <label for="carTypeFilter">Search</label>
+                    </div>
+                    <div class="search-inp">
+                        <input type="text" id="carTypeFilter" [(ngModel)]="carTypeFilter" (input)="applyFilter()" placeholder="Enter Brand Car ....">
+                    </div>
+                </div>
+
+                <div class="sort-box">
+                    <div class="sort-head">
+                        <p class="title">Sort</p>
+                        <div class="clearSort-div">
+                            <button *ngIf="sortType" (click)="clearSort()">Clear sort</button>
+                        </div>
+                    </div>
+                    <div class="line-sort"></div>
+                    <div class="sort-func">
+                        <div class="col">
+                            <p class="title-col">Sort By Price</p>
+                            <label>
+                                <input type="radio" name="sortOrder" (change)="sortAscending()" [checked]="sortType === 'asc'">Low to High
+                            </label>
+                            <label>
+                                <input type="radio" name="sortOrder" (change)="sortDescending()" [checked]="sortType === 'desc'">High to Low
+                            </label>
+                        </div>
+
+                        <div class="col">
+                            <p class="title-col">Sort By Name</p>
+                            <label>
+                                <input type="radio" name="sortOrder" (change)="sortA_Z()" [checked]="sortType === 'a_z'">A - Z
+                            </label>
+                            <label>
+                                <input type="radio" name="sortOrder" (change)="sortZ_A()" [checked]="sortType === 'z_a'">Z - A
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                  
+             
+            </div>
+
+            <div class="row-car">
+                <div *ngIf="filteredCars.length === 0">
+                    <p>No cars available in this price range.</p>
+                </div>
+                <div *ngIf="filteredCars.length > 0" class="all-car-container"> 
+                    <div *ngFor="let car of filteredCars" class="item">
+                        <div class="content-img">
+                            <img *ngIf="car.imagescar && car.imagescar.length>0" [src]="'http://localhost:8080' + car.imagescar[0]" alt="">
+                        </div>
+                        <p class="name">{{car.brand + " " + car.name + " "+ car.yearofmanufacture}}</p>
+                        <div class="middle-content">
+                            <div class="content-specification">
+                                <div class="specific">
+                                    <div class="icon-box">
+                                        <i class="fa-solid fa-user-group"></i>
+                                        <p class="hover">Person</p>
+                                    </div>
+                                    <div class="p-box">
+                                        <p>{{car.seats}}</p>
+                                    </div>
+                                </div>
+                                <div class="specific">
+                                    <div class="icon-box">
+                                        <i class="fa-solid fa-gauge-high"></i>
+                                        <p class="hover">Speed</p>
+                                    </div>
+                                    <div class="p-box">
+                                        <p>{{car.mileagekm}}</p>
+                                    </div>
+                                </div>
+                                <div class="specific">
+                                    <div class="icon-box">
+                                        <i class="fa-solid fa-car"></i>
+                                        <p class="hover">Engine</p>
+                                    </div>
+                                    <div class="p-box">
+                                        <p>{{car.engine}}</p>
+                                    </div>
+                                </div>
+                                <div class="specific">
+                                    <div class="icon-box">
+                                        <i class="fa-solid fa-suitcase-rolling"></i>
+                                        <p class="hover">Baggages</p>
+                                    </div>
+                                    <div class="p-box">
+                                        <p>{{car.baggages}}</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="middle-line"></div>
+
+                            <div class="price-box">
+                                <p class="price">{{car.priceperday+" $ "}}</p>
+                                <p class="day-text">/ day</p>
+                            </div>
+                        </div>   
+                        
+                        <div class="line-box"></div>
+
+                        <div class="content-btn">
+                            <div class="whats-app-cont btn">
+                                <i class="fa-brands fa-whatsapp"></i>
+                                <p>Whatsapp</p>
+                            </div>
+                            <div class="instagram-cont btn">
+                                <i class="fa-brands fa-instagram"></i>
+                                <p>Instagram</p>
+                            </div>
+                            <div class="book-now-cont btn" (click)="carBookNow(car.id)">
+                                <i class="fa-solid fa-angles-right"></i>
+                                <p>Book Now</p>
+                            </div>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

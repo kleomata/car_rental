@@ -1,0 +1,117 @@
+<div class="register-box">
+    <div class="register">
+        <h1>Register</h1>
+    
+        <div class="register-content">
+    
+            <div class="step-indicator">
+                <div class="step-circle" [ngClass]="{'active': currentStep === 1, 'completed': currentStep > 1}">
+                    <ng-container *ngIf="currentStep > 1 || isStepCompleted(1)">
+                        <i class="fa-solid fa-check"></i>
+                    </ng-container>
+                    <ng-container *ngIf="currentStep === 1 && !isStepCompleted(1)">1</ng-container>
+                </div>
+                <div class="step-line" [ngClass]="{'active': currentStep > 1, 'completed': currentStep > 1}"></div>
+                
+                <div class="step-circle" [ngClass]="{'active': currentStep === 2, 'completed': currentStep > 2}">
+                    <ng-container *ngIf="currentStep > 2 || isStepCompleted(2)">
+                        <i class="fa-solid fa-check"></i>
+                    </ng-container>
+                    <ng-container *ngIf="currentStep <= 2 && !isStepCompleted(2)">2</ng-container>
+                </div>
+                <div class="step-line" [ngClass]="{'active': currentStep > 2, 'completed': currentStep > 2}"></div>
+                
+                <div class="step-circle" [ngClass]="{'active': currentStep === 3, 'completed': currentStep > 4}">
+                    <ng-container *ngIf="currentStep > 3 || isStepCompleted(4)">
+                        <i class="fa-solid fa-check"></i>
+                    </ng-container>
+                    <ng-container *ngIf="currentStep <= 3 && !isStepCompleted(4)">3</ng-container>
+                </div>
+            </div> 
+    
+            <form [formGroup]="register" action="">
+                <div *ngIf="currentStep === 1" class="basic-info step">
+                    <h1 class="title">Basic Info</h1>
+                    <div class="form-step">
+                        <div class="row">
+                            <div class="col">
+                                <label for="nameCustomer">First name</label>
+                                <input type="text" id="nameCustomer" formControlName="nameCustomer" required />
+                            </div>
+                            <div class="col">
+                                <label for="lastnameCustomer">Last name</label>
+                                <input type="text" id="lastnameCustomer" formControlName="lastnameCustomer" required />
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <label for="birthdate">Birthdate</label>
+                                <input type="text" id="birthdate" formControlName="birthdate" required placeholder="1990-01-01"/>
+                            </div>
+                            <div class="col">
+                                <label for="gender">Gender</label>
+                                <input type="text" id="gender" formControlName="gender" required />
+                            </div>
+                        </div>
+                        <div class="col">
+                            <label for="emailCustomer">Email</label>
+                            <input type="email" id="emailCustomer" formControlName="emailCustomer" required />
+                        </div>
+                        <div class="col">
+                            <label for="phoneCustomer">Phone</label>
+                            <input type="text" id="phoneCustomer" formControlName="phoneCustomer" required />
+                        </div>
+                        
+                        <div class="col">
+                            <label for="location">Location</label>
+                            <input type="text" id="location" formControlName="location" required />
+                        </div>
+                        
+                    </div>
+                </div>
+        
+                <div *ngIf="currentStep === 2" class="image step">
+                    <h1 class="title">Profile Image</h1>
+                    <div class="profile">
+                        <div class="show-images">
+                            <div *ngIf="imagesPreviews" class="image-preview">
+                                <img [src]="imagesPreviews" alt="">
+                                <button (click)="removeImage()">
+                                    <i class="fa-solid fa-trash-can"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div *ngIf="!imagesPreviews" class="add-image" (click)="fileInput.click()">
+                            <input type="file" #fileInput (change)="onFileChange($event)" accept="image/*" style="display: none;">
+                            <i class="fa-solid fa-plus"></i>
+                        </div>
+                    </div>
+                </div>
+        
+                <div *ngIf="currentStep === 3" class="credentials step">
+                    <div class="col">
+                        <label for="useername">Username</label>
+                        <input type="text" id="username" formControlName="username" required/>
+                    </div>
+                    <div class="col">
+                        <label for="passwordCustomer">Password</label>
+                        <input type="password" id="passwordCustomer" formControlName="passwordCustomer" required />
+                    </div>
+                    <div class="col">
+                        <label for="confirmPassword">Confirm Password</label>
+                        <input type="password" id="confirmPassword" formControlName="confirmPassword" required />
+                    </div>
+                </div>
+        
+                <div class="button-container">
+                    <button (click)="prevStep()" [disabled]="currentStep === 1">Previous</button>
+                    <button *ngIf="currentStep < 3" (click)="nextStep()">Next</button>
+                    <button *ngIf="currentStep === 3" (click)="registerForm()">Register</button>
+                </div>
+            </form>
+          
+        </div>
+        
+       
+    </div>
+</div>

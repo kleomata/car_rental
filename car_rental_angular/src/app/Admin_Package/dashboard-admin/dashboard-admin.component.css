@@ -1,0 +1,21 @@
+.dashboard {
+    color: white;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.dashboard .title {
+    padding-bottom: 50px;
+}
+.dashboard .title h1{
+    font-weight: bold;
+    -webkit-text-stroke: 1px white;
+}
+.dashboard .title .line{
+    width: 30%;
+    height: 1px;
+    background: rgb(40, 40, 40); 
+}
+.dashboard p {
+    margin-bottom: 10px;
+    font-weight: bold;
+}

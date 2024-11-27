@@ -1,0 +1,360 @@
+<div class="carDetailsUser" *ngIf="carDetailsUser">
+    <div class="fleet_header">
+        <div class="content2"></div>
+        <div class="content1">
+            <img *ngIf="carDetailsUser.imagescar && carDetailsUser.imagescar.length>0"[src]="'http://localhost:8080' + carDetailsUser.imagescar[0]" alt="">
+        </div>
+        <div class="title_container">
+            <div class="title">
+                <h1>{{carDetailsUser.brand+" "+carDetailsUser.name+" "+carDetailsUser.yearofmanufacture}}</h1>
+                 <div class="line_container">
+                    <div class="lXL"></div>
+                    <div class="lL"></div>
+                    <div class="lL"></div>
+                    <div class="lM"></div>
+                    <div class="lM"></div>
+                    <div class="lM"></div>
+                    <div class="lM"></div>
+                    <div class="lS"></div>
+                    <div class="lS"></div>
+                    <div class="lS"></div>
+                    <div class="lS"></div>
+                    <div class="lS"></div>
+                    <div class="lS"></div>
+                    <div class="lS"></div>
+                    <div class="lS"></div>
+                    <div class="lS"></div>
+                    <div class="lS"></div>
+                    <div class="lS"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="body-details">
+        <div class="col-details">
+            <div class="name">
+                <h1>{{carDetailsUser.brand+" "+carDetailsUser.name+" "+carDetailsUser.yearofmanufacture}}</h1>
+            </div>
+            <div *ngIf="carDetailsUser" class="image-box">
+               <div class="swiper-container swiper-carDetailsUser">
+                    <div class="swiper-wrapper">
+                        <ng-container *ngFor="let image of carDetailsUser.imagescar">
+                        <div class="swiper-slide">
+                            <img [src]="'http://localhost:8080' +image" alt="{{ carDetailsUser.name }}" />
+                        </div>
+                        </ng-container>
+                    </div>
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-pagination"></div>  
+                    </div>
+                    <div class="swiper-container thumbs-swiper-carDetailsUser">
+                    <div class="swiper-wrapper">
+                        <ng-container *ngFor="let image of carDetailsUser.imagescar">
+                        <div class="swiper-slide">
+                            <img [src]="'http://localhost:8080' +image" alt="{{ carDetailsUser.name }}" />
+                        </div>
+                        </ng-container>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="price">
+                <h1>Price</h1>
+                <h1>{{carDetailsUser.priceperday+" $ / DAY"}}</h1>
+            </div>
+
+            <div class="line"></div>
+            <div class="info-pay">
+                <div class="col">
+                    <i class="fa-solid fa-check"></i>
+                    <p>Free Cancellation</p>
+                </div>
+                <div class="col">
+                    <i class="fa-solid fa-check"></i>
+                    <p>Pay at Pickup</p>
+                </div>
+                <div class="col">
+                    <i class="fa-solid fa-check"></i>
+                    <p>Insurance Included</p>
+                </div>
+            </div>
+
+            <div class="line"></div>
+            <div class="details-list">
+                <div class="row">
+                    <h1 class="title">Car Details</h1>
+                </div>
+                <div class="row-details">
+                    <div class="item">
+                        <p class="h1">Brand</p>
+                        <div class="info">
+                            <i class="fa-solid fa-tag"></i>
+                            <p>{{carDetailsUser.brand}}</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <p class="h1">Model</p>
+                        <div class="info">
+                            <i class="fa-solid fa-tag"></i>
+                            <p>{{carDetailsUser.name}}</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <p class="h1">Type</p>
+                        <div class="info">
+                            <i class="fa-solid fa-tag"></i>
+                            <p>{{carDetailsUser.type}}</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <p class="h1">Year Of Manufacture</p>
+                        <div class="info">
+                            <i class="fa-solid fa-calendar-days"></i>
+                            <p>{{carDetailsUser.yearofmanufacture}}</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <p class="h1">Mileages</p>
+                        <div class="info">
+                            <i class="fa-solid fa-gauge-high"></i>
+                            <p>{{carDetailsUser.mileagekm}}</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <p class="h1">Engine</p>
+                        <div class="info">
+                            <i class="fa-solid fa-car"></i>
+                            <p>{{carDetailsUser.engine}}</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <p class="h1">Gear Shift</p>
+                        <div class="info">
+                            <i class="fa-solid fa-gear"></i>
+                            <p>{{carDetailsUser.transmission}}</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <p class="h1">Seats</p>
+                        <div class="info">
+                            <i class="fa-solid fa-car-side"></i>
+                            <p>{{carDetailsUser.seats}}</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <p class="h1">People</p>
+                        <div class="info">
+                            <i class="fa-solid fa-user-group"></i>
+                            <p>{{carDetailsUser.seats}}</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <p class="h1">Doors</p>
+                        <div class="info">
+                            <i class="fa-solid fa-door-closed"></i>
+                            <p>{{carDetailsUser.doors}}</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <p class="h1">Bagagges</p>
+                        <div class="info">
+                            <i class="fa-solid fa-suitcase-rolling"></i>
+                            <p>{{carDetailsUser.baggages}}</p>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <p class="h1">Color</p>
+                        <div class="info">
+                            <i class="fa-solid fa-droplet"></i>
+                            <p>{{carDetailsUser.color}}</p>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="line"></div>
+            <div class="features-list">
+                <div class="row">
+                    <h1 class="title">Features & Specs</h1>
+                </div>
+                <div class="row-features">
+                    <div *ngFor="let features of carDetailsUser.moreoptions" class="features">
+                        <i class="fa-solid fa-tag"></i>
+                        <p>{{features}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="line"></div>
+            <div class="description-box">
+                <h1 class="title">Description</h1>
+                <p>{{carDetailsUser.describecar}}</p>
+            </div>
+        </div>
+
+        <div class="col-right">
+            <div class="box-book-now">
+                <form [formGroup]="bookingForm" (ngSubmit)="bookNow()">
+                    <div class="col read">
+                        <label for="price">Price per Day</label>
+                        <input type="text" readonly formControlName="price">
+                    </div>
+                    <div class="line"></div>
+                    <div class="col read">
+                        <label for="namecar">Car Name</label>
+                        <input type="text" readonly formControlName="namecar" [value]="carDetailsUser ? (carDetailsUser.brand + ' ' + carDetailsUser.name + ' ' + carDetailsUser.yearofmanufacture) : ''">
+                    </div>
+                    <div class="line"></div>
+                    <div class="row">
+                        <div class="row-date">
+                            <div class="col">
+                                <label for="startDate">Start date</label>
+                                <input type="date" formControlName="startDate" (change)="calculateTotal()">
+                            </div>
+                            <div class="col">
+                                <label for="endDate">End date</label>
+                                <input type="date" formControlName="endDate" (change)="calculateTotal()">
+                            </div>
+                            <div class="col">
+                                <label for="totalprice">Total Days</label>
+                                <input type="text" readonly formControlName="totalprice" [value]="totalDays !== null ? totalDays : ''">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="line"></div>
+                    <div class="col">
+                        <label for="text">Description</label>
+                        <textarea formControlName="text"></textarea>
+                    </div>
+                    <div class="line"></div>
+                    <div class="col">
+                        <label for="">Total Price</label>
+                        <input type="text" readonly formControlName="totalprice" [value]="totalPrice !== null ? totalPrice.toFixed(0) : ''">
+                    </div>
+                    <div class="line"></div>
+                    <div class="col-btn">
+                        <button type="submit">Book Now</button>
+                    </div>
+                </form>
+              </div>
+              
+              
+
+            <div class="open-box">
+                <div class="head">
+                    <i class="fa-solid fa-clock"></i>
+                    <div class="status">
+                        <div class="active">
+                            <span *ngIf="isOpenNow; else closedTemplate" class="open">
+                                Open Now
+                            </span>
+                            <ng-template #closedTemplate>
+                                <span class="closed">Closed Now</span>
+                            </ng-template>
+                        </div>
+                        <span class="clock" [ngClass]="isOpenNow ? 'open' : 'cloded'">
+                            {{currentStatusDay}}
+                        </span>
+                    </div>
+                </div>
+        
+                <div class="row"
+                    *ngFor="let day of days" [ngClass]="{'highlight': day.day === currentDay}"
+                >
+                    <p class="day">{{day.day}}</p>
+                    <p class="status-day">{{day.status}}</p>
+                </div>
+            </div>
+
+
+            
+
+            <div class="row-car">
+                <h1 class="other-car">Other Cars Rental</h1>
+                <div class="line"></div>
+                <div *ngIf="filterCarsRandom.length === 0">
+                    <p>No cars available in this price range.</p>
+                </div>
+                <div *ngIf="filterCarsRandom.length > 0" class="all-car-container"> 
+                    <div *ngFor="let car of filterCarsRandom" class="item">
+                        <div class="content-img">
+                            <img *ngIf="car.imagescar && car.imagescar.length>0" [src]="'http://localhost:8080' + car.imagescar[0]" alt="">
+                        </div>
+                        <p class="name">{{car.brand + " " + car.name + " "+ car.yearofmanufacture}}</p>
+                        <div class="middle-content">
+                            <div class="content-specification">
+                                <div class="specific">
+                                    <div class="icon-box">
+                                        <i class="fa-solid fa-user-group"></i>
+                                        <p class="hover">Person</p>
+                                    </div>
+                                    <div class="p-box">
+                                        <p>{{car.seats}}</p>
+                                    </div>
+                                </div>
+                                <div class="specific">
+                                    <div class="icon-box">
+                                        <i class="fa-solid fa-gauge-high"></i>
+                                        <p class="hover">Speed</p>
+                                    </div>
+                                    <div class="p-box">
+                                        <p>{{car.mileagekm}}</p>
+                                    </div>
+                                </div>
+                                <div class="specific">
+                                    <div class="icon-box">
+                                        <i class="fa-solid fa-car"></i>
+                                        <p class="hover">Engine</p>
+                                    </div>
+                                    <div class="p-box">
+                                        <p>{{car.engine}}</p>
+                                    </div>
+                                </div>
+                                <div class="specific">
+                                    <div class="icon-box">
+                                        <i class="fa-solid fa-suitcase-rolling"></i>
+                                        <p class="hover">Baggages</p>
+                                    </div>
+                                    <div class="p-box">
+                                        <p>{{car.baggages}}</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="middle-line"></div>
+
+                            <div class="price-box">
+                                <p class="price">{{car.priceperday+" $ "}}</p>
+                                <p class="day-text">/ day</p>
+                            </div>
+                        </div>   
+                        
+                        <div class="line-box"></div>
+
+                        <div class="content-btn">
+                            <div class="whats-app-cont btn">
+                                <i class="fa-brands fa-whatsapp"></i>
+                                <p>Whatsapp</p>
+                            </div>
+                            <div class="instagram-cont btn">
+                                <i class="fa-brands fa-instagram"></i>
+                                <p>Instagram</p>
+                            </div>
+                            <div class="book-now-cont btn" (click)="carBookNow(car.id)">
+                                <i class="fa-solid fa-angles-right"></i>
+                                <p>Book Now</p>
+                            </div>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+
+        
+        
+
+    </div>
+   
+</div>

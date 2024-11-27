@@ -1,0 +1,109 @@
+<div class="add-car">
+  <div class="title">
+    <h1>Add Car Section</h1>
+    <div class="line"></div>
+  </div>
+  <form [formGroup]="carForm" (ngSubmit)="addCarBtn()">
+    <div class="form-box">
+      <div class="row">
+        <div class="row-col">
+          <div class="row-item">
+            <label for="brand">Brand</label>
+            <input id="brand" formControlName="brand" required placeholder="Audi"/>
+          </div>
+          <div class="row-item">
+            <label for="type">Type</label>
+            <input id="type" formControlName="type" required />
+          </div>
+          <div class="row-item">
+            <label for="name">Name</label>
+            <input id="name" formControlName="name" required />
+          </div>
+          <div class="row-item">
+            <label for="yearofmanufacture">Year of Manufacture</label>
+            <input id="yearofmanufacture" type="number" formControlName="yearofmanufacture" required />
+          </div>
+          <div class="row-item">
+            <label for="seats">Seats</label>
+            <input id="seats" type="number" formControlName="seats" required />
+          </div>
+          <div class="row-item">
+            <label for="doors">Doors</label>
+            <input id="doors" type="number" formControlName="doors" required placeholder=""/>
+          </div>
+        </div>
+        <div class="row-col">
+          <div class="row-item">
+            <label for="baggages">Baggages</label>
+            <input id="baggages" type="number" formControlName="baggages" required />
+          </div>
+          <div class="row-item">
+            <label for="transmission">Transmission</label>
+            <input id="transmission" formControlName="transmission" required />
+          </div>
+          <div class="row-item">
+            <label for="priceperday">Price per Day</label>
+            <input id="priceperday" formControlName="priceperday" required />
+          </div>
+          <div class="row-item">
+            <label for="mileagekm">Mileage (km)</label>
+            <input id="mileagekm" type="number" formControlName="mileagekm" required />
+          </div>
+          <div class="row-item">
+            <label for="engine">Engine</label>
+            <input id="engine" formControlName="engine" required />
+          </div>
+          <div class="row-item">
+            <label for="color">Color</label>
+            <input id="color" formControlName="color" required />
+          </div>
+        </div>
+        <div class="row-col">
+          <label for="">More Options</label>
+          <div class="col-option">
+            <div class="all-option">
+              <div 
+                *ngFor="let option of optionsCar" 
+                [ngClass]="{'selected': isChecked(option)}"
+                (click)="toggleOption(option)"
+                class="option">
+                {{ option }}
+              </div>
+            </div>
+            <div class="selected-option">
+              <span *ngFor="let option of selectedOptions; let i = index">{{i+1}}{{": "}}{{ option }}<br></span>
+            </div>
+          </div> 
+        </div> 
+        <div class="row-col">
+          <label for="describecar">Description:</label>
+          <div class="textarea-box">
+            <textarea id="describecar" formControlName="describecar" required placeholder="Text here ....."></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="image-container">
+        <label for="brand">Pictures of thed car</label>
+        <div class="images">
+          <div class="show-images">
+            <div *ngFor="let file of imagePreviews; let i = index" class="image-preview">
+              <img [src]="file.url" alt="Uploaded Image" />
+              <button (click)="removeImage(file)">
+                <i class="fa-solid fa-trash-can"></i>
+              </button>
+            </div>
+          </div>
+          <div class="add-image" (click)="fileInput.click()">
+            <input type="file" #fileInput (change)="onFileChange($event)" accept="image/*" style="display: none;" />
+            <i class="fa-solid fa-plus"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="btn-add">
+      <button type="submit" [disabled]="carForm.invalid">Add Car</button>
+    </div>
+  </form>
+  
+</div>

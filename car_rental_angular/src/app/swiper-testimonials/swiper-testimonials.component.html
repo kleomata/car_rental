@@ -1,0 +1,28 @@
+<div class="swiper-container swiper-testimonials">
+    <div class="swiper-wrapper">
+        <ng-container *ngFor="let testimonial of testimonials">
+            <div class="swiper-slide">
+                <div class="head">
+                    <div class="img_container">
+                        <img [src]="'../../assets/images/' + testimonial.profileImage" alt="">
+                    </div>
+                    <div class="head_right">
+                        <h3>{{testimonial.name}}</h3>
+                        <div class="rating">
+                             <span *ngFor="let i of [].constructor(testimonial.rating); let idx = index">
+                                <i class="fa-solid fa-star"></i>
+                            </span>
+                            <span *ngFor="let i of [].constructor(5 - testimonial.rating); let idx = index">
+                                <i class="fa-regular fa-star"></i>
+                            </span>
+                        </div>  
+                    </div>      
+                </div> 
+                <div class="middle-line"></div>      
+                <p>{{testimonial.comment}}</p>
+            </div>
+        </ng-container>
+    </div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+</div>

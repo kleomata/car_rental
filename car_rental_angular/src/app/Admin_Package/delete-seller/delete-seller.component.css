@@ -1,0 +1,97 @@
+.delete {
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.delete .item,
+.delete .titleItem     {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1.5fr 1fr 1fr 1fr;
+    border-bottom: 1px solid white;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: white;
+    padding-left: 10px;
+    padding-right: 15px;
+    border-radius: 15px;
+    align-items: center;
+}
+.delete .titleItem {
+    font-weight: bold;
+    -webkit-text-stroke: 1px white;
+}
+.delete .item button {
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    background: white;
+    color: red;
+    font-weight: bold;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    cursor: pointer;
+    transition: .5s all ease;
+}
+.delete .item button:hover {
+    background: red;
+    color: white;
+}
+
+
+.confirm-dialog .line {
+    width: 80%;
+    height: 1px;
+    margin-top: 5px;
+    background: black;
+    margin-bottom: 10px;
+}
+.confirm-dialog {
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;  
+    align-items: start;  
+    position: absolute;
+    border: 1px solid #ccc;
+    padding: 30px 50px;
+    background: #fff;
+    width: 600px;
+    margin: auto;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    text-align: left;
+}
+.confirm-dialog .idMess {
+    color: #ff6a00;
+}
+  
+.confirm-dialog .btn {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    justify-content: center;
+    width: 100%;
+    margin-top: 30px;
+}
+.confirm-dialog .btn button {
+    padding: 15px 40px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background: #ff6a00;
+    color: white;
+    transition: .5s all ease;
+    font-weight: bold;
+}
+.confirm-dialog .btn button:hover{
+    transition: .5s all ease;
+    background: black;
+    color: #ff6a00;
+}

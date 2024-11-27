@@ -1,0 +1,59 @@
+<div class="edit">
+    <div class="titleItem">
+        <p>Id Seller</p>
+        <p>Username</p>
+        <p>Name</p>
+        <p>Last Name</p>
+        <p>Email</p>
+        <p>Tel. Number</p>
+        <p>Location</p>
+        <p>Edit Button</p>
+    </div>
+    <div class="item" *ngFor="let seller of sellers">
+        <p>{{seller.id}}</p>
+        <p>{{seller.username}}</p>
+        <p>{{seller.nameSeller}}</p>
+        <p>{{seller.lastnameSeller}}</p>
+        <p>{{seller.emailSeller}}</p>
+        <p>{{seller.telSeller}}</p>
+        <p>{{seller.locationSeller}}</p>
+    
+    
+        <button (click)="openEdit(seller)">Edit Seller</button>
+    
+    </div>
+    
+    <div *ngIf="isEditing" class="editSection">
+        <form [formGroup]="editForm" (ngSubmit)="saveEditSeller()">
+            <i class="fa-solid fa-xmark" (click)="btnEditing()"></i>
+            <div class="row">
+                <label>Username</label>
+                <input formControlName="username" required />
+            </div>
+            <div class="row">
+                <label>Name</label>
+                <input formControlName="nameSeller" required />
+            </div>
+            <div class="row">
+                <label>Last Name</label>
+                <input formControlName="lastnameSeller" required />
+             </div>
+            <div class="row">
+                <label>Email</label>
+                <input type="email" formControlName="emailSeller" required />
+            </div>
+            <div class="row">
+                <label>Phone</label>
+                <input formControlName="telSeller" required />
+            </div>
+            <div class="row">
+                <label>Location</label>
+                <input formControlName="locationSeller" required />
+            </div>
+            <div class="btnDiv">
+                <button type="submit">Save Changes</button>
+            </div>
+        </form>
+
+      </div>
+</div>

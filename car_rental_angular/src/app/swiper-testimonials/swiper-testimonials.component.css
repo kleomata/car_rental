@@ -1,0 +1,125 @@
+.swiper-container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+} 
+
+.swiper-wrapper {
+    width: 100%;
+    height: 95%;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+}
+
+.swiper-slide {
+    width: 25%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 20px;
+    padding: 30px;
+    border: 1px solid white;
+    border-radius: 20px;
+    transition: .5s all ease;
+}
+.swiper-slide:hover {
+    background: white;
+    transition: .5s all ease;
+    box-shadow: 3px 3px 0px rgb(255, 255, 255, .5);
+}
+.swiper-slide:hover .middle-line{
+    background: black;
+}
+.swiper-slide:hover p {
+    color: black;
+}
+.swiper-slide .head {
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    gap: 20px;
+}
+.swiper-slide .head .head_right{
+    display: flex;
+    flex-direction: column;
+}
+.img_container {
+    width: 70px;
+    height: 70px;
+    border: 2px solid #FF6A00;
+    border-radius: 50%;
+    box-shadow: 0px 0px 10px #FF6A00;
+}
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+.swiper-slide .middle-line {
+    width: 90%;
+    height: 1px;
+    background: white;
+}
+.head_right h3 {
+    color: #FF6A00;
+    font-weight: bold;
+}
+.rating{
+    color: #FF6A00;
+}
+
+.swiper-slide p {
+    color: white;
+}
+
+.swiper-button-prev {
+    left: 1px;
+    top: 50%;
+}
+.swiper-button-next {
+    right: 1px;
+    top: 50%;
+}
+.swiper-button-next,
+.swiper-button-prev{
+    width: 40px;
+    height: 40px;
+}
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    font-family: "Font Awesome 5 Free";
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: #FF6A00;
+    transform: none;
+    z-index: 10;
+    padding: 5px;
+    transition: .5s all ease-in-out;
+}
+
+.swiper-button-next::after {
+    content: "\f105";
+}
+.swiper-button-prev::after{
+    content: "\f104";
+}
+.swiper-button-next:hover::after,
+.swiper-button-prev:hover::after{
+    color: black;
+    background: #FF6A00;
+    box-shadow: 0px 0px 5px #FF6A00;
+    transition: .5s all ease-in-out;
+}
+

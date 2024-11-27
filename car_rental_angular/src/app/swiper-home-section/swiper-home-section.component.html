@@ -1,0 +1,81 @@
+<div class="swiper-container swiper-most-selling">
+    <div class="swiper-wrapper">
+        <ng-container *ngFor="let slide of slides">
+            <div class="swiper-slide">
+                
+                <div class="head_container">
+                    <h1 class="h1">{{slide.brand}}</h1><br>
+                    <h1 class="h2">{{slide.type}}</h1>
+                </div>
+                
+                <div class="middle_container">
+                    <div class="order_now_content">
+                        <button class="order_now">Order Now</button>
+                    </div>
+                    <img class="image_car" [src]="'../../assets/images/' + slide.image" alt="">
+                    <div class="most_selling_container">
+                        <h1 class="selling_text">Most Selling</h1>
+                        <div class="line_container">
+                            <div class="lS"></div>
+                            <div class="lS"></div>
+                            <div class="lS"></div>
+                            <div class="lS"></div>
+                            <div class="lS"></div>
+                            <div class="lM"></div>
+                            <div class="lM"></div>
+                            <div class="lL"></div>
+                            <div class="lXL"></div>
+                            <div class="lL"></div>
+                            <div class="lM"></div>
+                            <div class="lM"></div>
+                            <div class="lS"></div>
+                            <div class="lS"></div>
+                            <div class="lS"></div>
+                            <div class="lS"></div>
+                            <div class="lS"></div>
+                        </div>
+                        <div class="selling_price_container">
+                            <h1 class="selling_price">{{slide.daily_price}}</h1>
+                        </div>
+                    </div>
+                </div>
+                
+                <img class="image_logo" [src]="'../../assets/images/' + slide.logo_image" alt="">
+                
+                
+                <div class="box-info">
+                    <div class="item width200">
+                        <div class="head">Top speed</div>
+                        <div class="body">{{slide.top_speed}}</div>
+                    </div>
+                    <div class="item width200">
+                        <div class="head">Engine Capacity</div>
+                        <div class="body">{{slide.engine_capacity}}</div>
+                    </div>
+                    <div class="item width200">
+                        <div class="head">Fuel Type</div>
+                        <div class="body">{{slide.fuel_type}}</div>
+                    </div>
+                    <div class="item width200">
+                        <div class="head">Year of Manufacture</div>
+                        <div class="body">{{slide.year_of_manufacture}}</div>
+                    </div>
+                    <div class="item width100">
+                        <div class="head">Steats</div>
+                        <div class="body">{{slide.seats}}</div>
+                    </div>
+                    <div class="item width100">
+                        <div class="head">Doors</div>
+                        <div class="body">{{slide.doors}}</div>
+                    </div>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+    <div class="left-bg"></div>
+    <div class="bottom-content"></div>
+      
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>  
+</div>

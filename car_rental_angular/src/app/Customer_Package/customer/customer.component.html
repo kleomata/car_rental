@@ -1,0 +1,24 @@
+<div class="customer">
+    <div class="side-menu">
+        <div class="item" *ngFor="let item of menu">
+            <a [routerLink]="item.routerLink" routerLinkActive="active">
+                <i class="{{item.icon}}"></i>
+                <div class="name">
+                    <p>{{item.name}}</p>
+                </div>
+            </a>
+        </div>
+        <div class="item">
+            <button (click)="onLogoutCustomer()">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <div class="name">
+                    <p>Logout</p>
+                </div>
+            </button>
+        </div>
+    </div>
+
+    <div class="body">
+        <router-outlet></router-outlet>
+    </div>
+</div>

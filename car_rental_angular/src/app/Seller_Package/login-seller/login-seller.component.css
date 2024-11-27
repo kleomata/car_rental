@@ -1,0 +1,200 @@
+.loginSeller {
+    width: 100vw;
+    height: 100vh;
+    background: #ff6a00;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+.loginSeller .center {
+    display: flex;
+    flex-direction: row;    
+}
+.loginSeller .form_cont {
+    background: rgba(255, 255, 255, .6);
+    height: 600px;
+    width: 400px;
+    border-radius: 0px 30px 30px 0px;
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    justify-content: space-between;
+    box-shadow: 0px 0px 10px rgb(255, 255, 255, .6);
+}
+.loginSeller .form_cont h1 {
+    color: transparent;
+    font-weight: bold;
+    -webkit-text-stroke: 1px rgb(255, 106, 0);
+    text-shadow: 0px 0px 3px rgba(255, 106, 0, .3);
+    font-size: 40px;
+}
+.line_container {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    margin-top: 10px;
+}
+.lXL, .lL, .lM, .lS {
+    height: 10px;
+    transform: skewX(45deg);
+    border: 1px solid rgba(255, 106, 0, 1); 
+    box-shadow: inset 0px 0px 10px rgba(255, 106, 0, 0.5);
+}
+.lXL{
+    width: 40px;
+}
+.lL{
+    width: 30px;
+}
+.lM{
+    width: 20px;
+}
+.lS{
+    width: 10px;
+}
+
+
+.loginSeller form{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.loginSeller form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: start;
+}
+.loginSeller form .row {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+}
+.loginSeller form .row label {
+    color: #ff6a00;
+    font-weight: bold;
+    -webkit-text-stroke: 1px #ff6a00;
+}
+.loginSeller form .row input {
+    width: 250px;
+    height: 30px;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    border-bottom: 1px solid #ff6a00;
+    color: #ff6a00;
+    padding-left: 10px;
+}
+.loginSeller form .btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.loginSeller form .btn button {
+    padding: 15px 45px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    background: #ff6a00;
+    transition: .5s all ease;
+    cursor: pointer;
+    margin-top: 10px;
+}
+.loginSeller form .btn button:hover {
+    color: #ff6a00;
+    box-shadow: 0px 0px 3px white;
+    transition: .5s all ease;
+    background: white;
+}
+
+
+.loginSeller .center .img {
+    height: 600px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 30px 0px 0px 30px;
+}
+.loginSeller .center img {
+    height: 600px;
+    border-radius: 0px 30px 30px 0px;
+    transform: rotateY(180deg);
+    z-index: -1;
+}
+
+
+.desing1 {
+    position: absolute;
+    width: 160%;
+    height: 150px;
+    background: rgb(255, 255, 255, .5);
+    top: -50px;
+    left: -50px;
+    transform-origin: left center;
+    transform: rotateZ(25deg);
+    z-index: -1;
+    box-shadow: 0px 0px 10px rgb(255, 255, 255, .5);
+}
+.img .desing2 {
+    position: absolute;
+    width: 70%;
+    height: 30px;
+    top: 0px;
+    right: -50px;
+    transform: skewX(45deg);
+    background: rgba(255, 255, 255, .6);
+    box-shadow: 0px 0px 10px rgb(255, 255, 255, .6);
+    z-index: 1;
+}
+.img .desing3 {
+    position: absolute;
+    width: 100%;
+    height: 30px;
+    bottom: 0px;
+    right: 0px;
+    border-radius: 0px 0px 0px 30px;
+    background: rgba(255, 255, 255, .6);
+    box-shadow: 0px 0px 10px rgb(255, 255, 255, .6);
+    z-index: 1;
+}
+.img .desing4 {
+    position: absolute;
+    width: 30px;
+    height: 80%;
+    top: -20px;
+    left: 0px;
+    transform: skewY(-45deg);
+    border-radius: 30px 0px 0px 0px;
+    background: rgba(255, 255, 255, .6);
+    box-shadow: 0px 0px 10px rgb(255, 255, 255, .6);
+    z-index: 1;
+}
+
+.desing5 {
+    position: absolute;
+    bottom: -100px;
+    left: -100px;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0px 0px 10px white;
+
+}
+.desing6 {
+
+    position: absolute;
+    top: -100px;
+    right: -100px;
+    width: 400px;
+    height: 400px;
+    background: white;
+    box-shadow: 0px 0px 10px white;
+}
