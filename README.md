@@ -2,8 +2,8 @@
 Website for car rental reservations.
 
 The code is built with: <br>
---> Spring Boot (Java) - backend 
---> Angular - frontend 
+--> Spring Boot (Java) - backend <br>
+--> Angular - frontend <br>
   -> TypeScript 
   -> CSS 
   -> HTML 
